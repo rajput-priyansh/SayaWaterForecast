@@ -1,9 +1,11 @@
 import warnings
 from fbprophet import Prophet  # from fbprophet
-#import Prophet
+#import prophet
 # import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+#from prophet import Prophet
+#from prophet import Prophet
 
 from Logging import LoggeR
 from SendEmail import sendEmailToClient
@@ -22,10 +24,11 @@ def main(finaldate,filename,id,df):
 	#'C:/inetpub/wwwroot/SAYAML/f' + filename + '.xlsx', index_col='MeterLocalTime',
     #                   parse_dates=True
 	
-    df = pd.read_excel('C:/inetpub/wwwroot/SayaMLForecast/SayaWaterForecast/RawDataDump/f'+ filename + '.xlsx', index_col='MeterLocalTime',
-                       parse_dates=True)
+    # df = pd.read_excel('C:/inetpub/wwwroot/SayaMLForecast/SayaWaterForecast/RawDataDump/f'+ filename + '.xlsx', index_col='MeterLocalTime',
+    #                    parse_dates=True)
     if df.empty:
-        sendEmailToClient.sendMailForException("No Data Found For this User :" + id.__str__(),"No Data Found For the Customer  "+ id.__str__()+"" )
+        LoggeR.writeExpceptionToTexFile("No Data Found For this User :" + id.__str__())
+        #sendEmailToClient.sendMailForException("No Data Found For this User :" + id.__str__(),"No Data Found For the Customer  "+ id.__str__()+"" )
         print('No Data Found')
     else:
         daily = df.resample('D').sum()
@@ -37,7 +40,8 @@ def main(finaldate,filename,id,df):
         data.head()
         m = Prophet()
         if data.empty:
-            sendEmailToClient.sendMailForException("No Data Found For this User :" + id.__str__(),"No Data Found For the Customer  "+ id.__str__()+"After Convert" )		    
+            LoggeR.writeExpceptionToTexFile("No Data Found For this User :" + id.__str__()+"After Convert DataFrame")
+            #sendEmailToClient.sendMailForException("No Data Found For this User :" + id.__str__(),"No Data Found For the Customer  "+ id.__str__()+"After Convert" )
             print('No Data Found After Convert')
 
         else:
@@ -54,21 +58,21 @@ def main(finaldate,filename,id,df):
                 print(fixt)
                 # Current month data
                 # connection For Development
-                #connectionSetting = getConfigurationSettings.getconfigurations()
-                # connectionObj = connectionDB.connectDatabase(connectionSetting['dbusername'], connectionSetting['dbpassword'],
-                #                                        connectionSetting['host'], connectionSetting['dbport'],
-                #                                        'sayaml')
-                connectionObj = connectionDB.connectDatabase('suraj',
-                                                             'SayaLife_147',
-                                                                                                  'awssayatest.ccdyzxo4csms.us-east-1.rds.amazonaws.com', '5432',
-                                                                                                   'sayaml')
+                connectionSetting = getConfigurationSettings.getconfigurations()
+                connectionObj = connectionDB.connectDatabase(connectionSetting['_dbusername'], connectionSetting['_dbpassword'],
+                                                       connectionSetting['_hostdev'], connectionSetting['_dbport'],connectionSetting['_dbml'])
+                                                       #'sayaml')
+                #connectionObj = connectionDB.connectDatabase('postgres',
+                #                                             'test#123',
+                #                                                                                  'localhost', '5432',
+                #                                                                                   'sayaml')
                 # connectionObj =  connectionDB.connectDatabase(user, password, host, port, database)     connectionSetting['_hostlive']
                 cur = connectionObj.cursor();
                 for idx, val in enumerate(fixt):
                     try:
                         print(fixt[idx][0].__str__() + ' ' + fixt[idx][15].__str__())
-                        if (fixt[idx][15] <= 0):
-                            fixt[idx][15] = 0;
+                        # if (fixt[idx][15] <= 0):
+                        #     fixt[idx][15] = 0;
                         #cur.callproc('InsertDataFromFile',
                         #     ('', float(fixt[idx][15]), bool(1), fixt[idx][0].strftime('%y%m%d'), 1, float(total),id))
                         query = "select * from public.InsertDataFromFile ( ''::text," + float(fixt[idx][15]).__str__() +"::float," + bool(1).__str__() + "::boolean," + fixt[idx][0].strftime('%y%m%d').__str__() + "::varchar(50),1," + float(fixt[idx][15]).__str__() +"::integer," + id.__str__() + "::bigint);"
@@ -81,11 +85,13 @@ def main(finaldate,filename,id,df):
                         connectionObj.commit();
                         #cur.nextset()
                     except Exception as Argument:
+                        LoggeR.writeExpceptionToTexFile(Argument.__str__() + "FOr User:  " + id.__str__())
+                        #LoggeR.writeExpceptionToTexFile(Argument.__str__())
                         pass
                         # LoggeR.critical("Some Exception :   " + Argument.__str__())
                         print("Some Exception :" + Argument.__str__())
-                        LoggeR.logger.error(Argument.__str__(), "For the User :", id.__str__());
-                        sendEmailToClient.sendMailForException(Argument.__str__()+ "And ID:" + id.__str__(),"Error While Inserting Data Date wise for")
+                        # LoggeR.logger.error(Argument.__str__(), "For the User :", id.__str__());
+                        # sendEmailToClient.sendMailForException(Argument.__str__()+ "And ID:" + id.__str__(),"Error While Inserting Data Date wise for")
                         continue;
 
 

@@ -4,7 +4,7 @@ SET logfile="C:\inetpub\wwwroot\SAYAML\logs_batch\batch.log"
 call C:\ProgramData\Anaconda3\Scripts\activate.bat
 @echo off
 cd C:\inetpub\wwwroot\SAYAML
-python C:\inetpub\wwwroot\SayaMLForecast\SayaWaterForecast\main.py
+python C:\inetpub\wwwroot\SayaMLForecast\SayaWaterForecast09162022\SayaWaterForecast\main.py
 
 cmd /k
 @echo finished at %date% %time% >> %logfile%

@@ -5,7 +5,8 @@ import itertools
 import matplotlib.pyplot as plt
 import pandas as pd
 import matplotlib
-from fbprophet import Prophet  # from fbprophet
+#import prophet
+from fbprophet import Prophet # from fbprophet
 # Piyush
 # import pymssql
 import psycopg2
@@ -32,15 +33,17 @@ def startWaterForecastFileDownload():
     try:
         # sDate = input("Enter Start Date Formate( dd/mm/yyyy ) : ")
         # eDate = input("Enter End Date Formate( dd/mm/yyyy ) : ")
-        today = datetime.datetime(2022, 9, 1)  # datetime.today()
+        today = datetime.datetime(2022, 7, 1)  # datetime.today()
         months = calendar.monthrange(today.year, today.month)[1]
-        sDate = today + relativedelta(months=-1)
+        #sDate = today + relativedelta(months=-5)
+        sDate = datetime.datetime(2022, 2, 1)
         # months=calendar.monthrange(sDate.year, sDate.month)[1]
         # sDate=datetime.today() + timedelta(days=-months)
-        eDate = datetime.datetime(sDate.year, sDate.month, sDate.day) + relativedelta(
-            day=31)  # datetime.today() + timedelta(days=-5)  # days=-1 replace -5 with -1 once this file runs ---chirag 05072022
+        #eDate = datetime.datetime(sDate.year, sDate.month, sDate.day) + relativedelta(
+        #    months=6)  # datetime.today() + timedelta(days=-5)  # days=-1 replace -5 with -1 once this file runs ---chirag 05072022
         # startDate = datetime.strptime(sDate, '%d/%m/%Y')
         # endDate = datetime.strptime(eDate, '%d/%m/%Y')
+        eDate =datetime.datetime(2022, 8,31)
         finaldate = sDate.strftime('%y%m%d')  # sys.argv[2]
         finalEdate = eDate.strftime('%y%m%d')  # sys.argv[3]
         print(finaldate)
@@ -53,38 +56,38 @@ def startWaterForecastFileDownload():
         # customerId = [2,165,172,213,214,217,10227,10342,10511,10512,10519]
         #finalIds = [10260]
         connectionSetting = getConfigurationSettings.getconfigurations()
-        connObj = psycopg2.connect(user="postgres",
-                                  password="test#123",
-                                  host="52.40.141.127",
-                                  port="5432",
-                                  database="SAYA")
-        #connObj = connectionDB.connectDatabase(connectionSetting['_dbusername'], connectionSetting['_dbpassword'],
-        #                                       connectionSetting['_hostlive'], connectionSetting['_dbport'],
-        #                                       connectionSetting['_dbsaya'])
-		
+        # connObj = psycopg2.connect(user="postgres",
+        #                           password="test#123",
+        #                           host="52.40.141.127",
+        #                           port="5432",
+        #                           database="SAYA")
+        connObj = connectionDB.connectDatabase(connectionSetting['_dbusername'], connectionSetting['_dbpassword'],
+                                               connectionSetting['_hostlive'], connectionSetting['_dbport'],
+                                               connectionSetting['_dbsaya'])
+        finalids = [2]
         cur = connObj.cursor()
         # conn = ''
         customerIdQuery = 'select "Id" from "Customer" where "AccountType"  in (5,6) and "IsDeleted"  = false and "IsActive"  = true ;';
 
-        with connObj.cursor() as cur:
-            cur.execute(customerIdQuery)
-            finalIds = cur.fetchall()
-            print("Fetched records: %s" % finalIds)
-        for id in finalIds:
+        # with connObj.cursor() as cur:
+        #     cur.execute(customerIdQuery)
+        #     finalIds = cur.fetchall()
+        #     print("Fetched records: %s" % finalIds)
+        for id in finalids:
             try:
-                id= str(id)           #uncomment when working with live fetch ids
-                id=int(id[1:-2])
-                print(id)
-                # id = 10260
+                # id= str(id)           #uncomment when working with live fetch ids
+                # id=int(id[1:-2])
+                # print(id)
+                #id = 10260
                 query = "select * from GetWaterMeterDataForDataFile ( " + finaldate.__str__() + "::varchar(100)" + "," + finalEdate.__str__() + "::varchar(100)" + "," + id.__str__() + "::bigint" + ")"
                 print(query)
-                writer = pd.ExcelWriter(
-                    'C:/inetpub/wwwroot/SayaMLForecast/SayaWaterForecast/RawDataDump/f' + finalEdate.__str__() + id.__str__() + '.xlsx',
-                    engine='xlsxwriter')
-                df = pd.read_sql(query, connObj)
-                df.to_excel(writer, sheet_name='Sheet1')
-                # filedialog.asksaveasfilename(filetypes=[('excel file', '*.xlsx')], defaultextension='.xlsx')
-                writer.save()
+                # writer = pd.ExcelWriter(
+                #     'C:/inetpub/wwwroot/SayaMLForecast/SayaWaterForecast/RawDataDump/f' + finalEdate.__str__() + id.__str__() + '.xlsx',
+                #     engine='xlsxwriter')
+                df = pd.read_sql(query, connObj, index_col='MeterLocalTime', parse_dates=True)
+                #df.to_excel(writer, sheet_name='Sheet1')
+                ## filedialog.asksaveasfilename(filetypes=[('excel file', '*.xlsx')], defaultextension='.xlsx')
+                #writer.save()
                 # writer.close()
                 print('Out from get data')
                 prophetDataModel.main(finalEdate, finalEdate + id.__str__(), id, df)
@@ -93,7 +96,8 @@ def startWaterForecastFileDownload():
 
                 # LoggeR.critical("Some Exception :   " + Argument.__str__())
                 print("Some Exception :" + Argument.__str__())
-                LoggeR.logger.error(Argument.__str__() ,"For the User :" ,id.__str__());
+                #LoggeR.logger.error(Argument.__str__() ,"For the User :" ,id.__str__());
+                LoggeR.writeExpceptionToTexFile(Argument.__str__()+"For CustomerId::>"+id.__str__())
                 # sendEmailToClient.sendMailForException(Argument.__str__())
                 # logger.error("a")
                 pass
@@ -109,6 +113,7 @@ def startWaterForecastFileDownload():
     except Exception as Argument:
         # LoggeR.critical("Some Exception :   " + Argument.__str__())
         print("Some Exception :" + Argument.__str__())
-        LoggeR.logger.error(Argument.__str__());
+        LoggeR.writeExpceptionToTexFile(Argument.__str__())
+        #LoggeR.logger.error(Argument.__str__());
         # sendEmailToClient.sendMailForException(Argument.__str__())
         pass

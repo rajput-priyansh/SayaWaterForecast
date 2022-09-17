@@ -1,0 +1,12 @@
+2022-09-16 16:00:00.456866---->File in running mode....please don't stop it...Test With Input Data2022-09-16 15:59:58.432153
+2022-09-16 16:00:04.378298---->File in running mode....please don't stop it...Test With Input Data2022-09-16 16:00:02.317119
+2022-09-16 16:00:44.254563---->connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "SAYAML" does not exist
+FOr User:  2
+2022-09-16 16:10:07.734637---->File in running mode....please don't stop it...Test With Input Data2022-09-16 16:10:07.733639
+2022-09-16 16:10:07.735634---->File in running mode....please don't stop it...Test With Input Data2022-09-16 16:10:07.734637
+2022-09-16 16:10:50.961478---->connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "SAYAML" does not exist
+For CustomerId::>2
+2022-09-16 12:52:29.096496---->File in running mode....please don't stop it...Test With Input Data2022-09-16 12:52:29.096496
+2022-09-16 12:52:40.299517---->FATAL:  password authentication failed for user "postgres"
+FATAL:  password authentication failed for user "postgres"
+For CustomerId::>2

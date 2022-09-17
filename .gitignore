@@ -4,3 +4,8 @@
 
 /.idea
 /.vs
+/SendEmail/__pycache__
+/Data/__pycache__
+/ForecastingModel/__pycache__
+/GetRawData/__pycache__
+/Logging/__pycache__

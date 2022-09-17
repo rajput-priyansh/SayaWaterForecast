@@ -3,7 +3,7 @@ import configparser
 def read_config():
     try:
         config= configparser.ConfigParser()
-        config.read('Configurations\configurations.ini')
+        config.read('C:\inetpub\wwwroot\SayaMLForecast\SayaWaterForecast09162022\SayaWaterForecast\Configurations\configurations.ini')
         return config
     except Exception as Argument:
         print("Some Exception :" + Argument.__str__())
