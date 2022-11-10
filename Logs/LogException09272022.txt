@@ -1,0 +1,300 @@
+2022-09-26 12:57:02.505219---->File in running mode....please don't stop it...6 Months Data Insert!!-->>2022-09-26 12:57:02.503200
+2022-09-26 12:57:13.751041---->:::---Start Inserting Forecast Data For User:-->2
+2022-09-26 12:57:13.766007---->       Date                  ProjectedConsumption     
+2022-09-26 12:57:13.780043---->2022-09-01 00:00:00   ----    143.3557775868415
+2022-09-26 12:57:13.812011---->duplicate key value violates unique constraint "water_forecast_pkey"
+DETAIL:  Key (bill_id)=(70) already exists.
+CONTEXT:  SQL statement "insert into water_forecast (projected_consumption,future_date,total_proj_consumption,"CustomerId") 
+		values(cast(utility_consumption as float),cast(to_char(cast(today_date as timestamp),'yyyy-MM-dd') as date)
+			   ,cast(total_proj_consumption as float),customerId)"
+PL/pgSQL function insertdatafromfile(text,double precision,boolean,character varying,integer,integer,bigint) line 14 at SQL statement
+FOr User:  2
+2022-09-26 12:57:13.829000---->2022-09-02 00:00:00   ----    140.20567105326205
+2022-09-26 12:57:13.845012---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:13.862013---->2022-09-03 00:00:00   ----    145.4089955401647
+2022-09-26 12:57:13.878017---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:13.894012---->2022-09-04 00:00:00   ----    317.2091179072252
+2022-09-26 12:57:13.910018---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:13.925028---->2022-09-05 00:00:00   ----    350.89315760782665
+2022-09-26 12:57:13.941019---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:13.956985---->2022-09-06 00:00:00   ----    241.33215845267594
+2022-09-26 12:57:13.974007---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:13.990016---->2022-09-07 00:00:00   ----    188.41028023276618
+2022-09-26 12:57:14.006016---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:14.023015---->2022-09-08 00:00:00   ----    138.33038313884128
+2022-09-26 12:57:14.036997---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:14.055003---->2022-09-09 00:00:00   ----    135.18027660509165
+2022-09-26 12:57:14.072017---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:14.089035---->2022-09-10 00:00:00   ----    140.38360109213733
+2022-09-26 12:57:14.105017---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:14.122018---->2022-09-11 00:00:00   ----    312.183723459167
+2022-09-26 12:57:14.137021---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:14.154019---->2022-09-12 00:00:00   ----    345.8677631596902
+2022-09-26 12:57:14.183010---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:14.199022---->2022-09-13 00:00:00   ----    236.3067640043029
+2022-09-26 12:57:14.214002---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:14.232022---->2022-09-14 00:00:00   ----    183.3848857846526
+2022-09-26 12:57:14.247021---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:14.265023---->2022-09-15 00:00:00   ----    133.30498869068057
+2022-09-26 12:57:14.279023---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:14.296997---->2022-09-16 00:00:00   ----    130.154882156957
+2022-09-26 12:57:14.312023---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:14.330025---->2022-09-17 00:00:00   ----    135.35820664403474
+2022-09-26 12:57:14.346024---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:14.363026---->2022-09-18 00:00:00   ----    307.1583290105678
+2022-09-26 12:57:14.380995---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:14.396025---->2022-09-19 00:00:00   ----    340.8423687116261
+2022-09-26 12:57:14.413026---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:14.428026---->2022-09-20 00:00:00   ----    231.2813695561874
+2022-09-26 12:57:14.444991---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:14.462015---->2022-09-21 00:00:00   ----    178.3594913365248
+2022-09-26 12:57:14.477042---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:14.492049---->2022-09-22 00:00:00   ----    128.2795942425198
+2022-09-26 12:57:14.509029---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:14.524028---->2022-09-23 00:00:00   ----    125.12948770880445
+2022-09-26 12:57:14.543029---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:14.563021---->2022-09-24 00:00:00   ----    130.3328121960826
+2022-09-26 12:57:14.572029---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:14.585030---->2022-09-25 00:00:00   ----    302.13293456262727
+2022-09-26 12:57:14.601029---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:14.618030---->2022-09-26 00:00:00   ----    335.8169742636264
+2022-09-26 12:57:14.652004---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:14.678033---->2022-09-27 00:00:00   ----    226.255975108072
+2022-09-26 12:57:14.702033---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:14.720035---->2022-09-28 00:00:00   ----    173.334096888397
+2022-09-26 12:57:14.735034---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:14.750035---->2022-09-29 00:00:00   ----    123.25419979435907
+2022-09-26 12:57:14.766012---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:14.782035---->2022-09-30 00:00:00   ----    120.10409326075573
+2022-09-26 12:57:14.796994---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-26 12:57:14.827005---->:::---End Inserting Forecast Data For User:-->2
+2022-09-26 12:57:14.841006---->Done ForecastData Insert for the Month:-->9
+2022-09-26 12:57:24.216929---->:::---Start Inserting Forecast Data For User:-->219
+2022-09-26 12:57:24.229941---->       Date                  ProjectedConsumption     
+2022-09-26 12:57:24.241939---->2022-08-16 00:00:00   ----    16.962763468416398
+2022-09-26 12:57:24.262939---->duplicate key value violates unique constraint "water_forecast_pkey"
+DETAIL:  Key (bill_id)=(71) already exists.
+CONTEXT:  SQL statement "insert into water_forecast (projected_consumption,future_date,total_proj_consumption,"CustomerId") 
+		values(cast(utility_consumption as float),cast(to_char(cast(today_date as timestamp),'yyyy-MM-dd') as date)
+			   ,cast(total_proj_consumption as float),customerId)"
+PL/pgSQL function insertdatafromfile(text,double precision,boolean,character varying,integer,integer,bigint) line 14 at SQL statement
+FOr User:  219
+2022-09-26 12:57:24.275899---->2022-08-17 00:00:00   ----    24.062879029207433
+2022-09-26 12:57:24.287938---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.301901---->2022-08-18 00:00:00   ----    23.66939843212801
+2022-09-26 12:57:24.313954---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.325896---->2022-08-19 00:00:00   ----    168.4682724491299
+2022-09-26 12:57:24.338914---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.352942---->2022-08-20 00:00:00   ----    -12.470569486792282
+2022-09-26 12:57:24.364942---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.376912---->2022-08-21 00:00:00   ----    -25.04861787153074
+2022-09-26 12:57:24.388942---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.402943---->2022-08-22 00:00:00   ----    -28.467432817142647
+2022-09-26 12:57:24.414900---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.426944---->2022-08-23 00:00:00   ----    12.502744728375438
+2022-09-26 12:57:24.439944---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.450944---->2022-08-24 00:00:00   ----    19.60286028925863
+2022-09-26 12:57:24.463907---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.475944---->2022-08-25 00:00:00   ----    19.209379692141525
+2022-09-26 12:57:24.487909---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.499945---->2022-08-26 00:00:00   ----    164.0082537090696
+2022-09-26 12:57:24.511946---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.524909---->2022-08-27 00:00:00   ----    -16.930588226776898
+2022-09-26 12:57:24.534946---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.548960---->2022-08-28 00:00:00   ----    -29.508636611378755
+2022-09-26 12:57:24.560947---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.572948---->2022-08-29 00:00:00   ----    -32.92745155703829
+2022-09-26 12:57:24.585948---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.597948---->2022-08-30 00:00:00   ----    8.042725988268048
+2022-09-26 12:57:24.608948---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.622962---->2022-08-31 00:00:00   ----    15.142841549024254
+2022-09-26 12:57:24.635903---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.648951---->2022-09-01 00:00:00   ----    14.749360952155037
+2022-09-26 12:57:24.658909---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.672950---->2022-09-02 00:00:00   ----    159.54823496900926
+2022-09-26 12:57:24.685950---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.697951---->2022-09-03 00:00:00   ----    -21.39060696643618
+2022-09-26 12:57:24.710951---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.723952---->2022-09-04 00:00:00   ----    -33.968655351462345
+2022-09-26 12:57:24.736952---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.747904---->2022-09-05 00:00:00   ----    -37.38747029693396
+2022-09-26 12:57:24.759952---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.773954---->2022-09-06 00:00:00   ----    3.582707248494522
+2022-09-26 12:57:24.785953---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.798922---->2022-09-07 00:00:00   ----    10.682822809361031
+2022-09-26 12:57:24.810871---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.824921---->2022-09-08 00:00:00   ----    10.2893422119419
+2022-09-26 12:57:24.837923---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.849915---->2022-09-09 00:00:00   ----    155.08821622902911
+2022-09-26 12:57:24.861922---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.873922---->2022-09-10 00:00:00   ----    -25.850625706529286
+2022-09-26 12:57:24.884923---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.898922---->2022-09-11 00:00:00   ----    -38.428674091545915
+2022-09-26 12:57:24.911924---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.924924---->2022-09-12 00:00:00   ----    -41.8474890368296
+2022-09-26 12:57:24.936924---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.947924---->2022-09-13 00:00:00   ----    -0.8773114919466973
+2022-09-26 12:57:24.961926---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.972895---->2022-09-14 00:00:00   ----    6.222804069096313
+2022-09-26 12:57:24.985927---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  219
+2022-09-26 12:57:24.997926---->:::---End Inserting Forecast Data For User:-->219
+2022-09-26 12:57:25.007926---->Done ForecastData Insert for the Month:-->9
+2022-09-27 06:33:06.010817---->File in running mode....please don't stop it...6 Months Data Insert!!-->>2022-09-27 06:33:06.008784
+2022-09-27 06:33:18.222716---->:::---Start Inserting Forecast Data For User:-->2
+2022-09-27 06:33:18.245716---->       Date                  ProjectedConsumption     
+2022-09-27 06:33:18.271708---->2022-09-01 00:00:00   ----    143.3557775868415
+2022-09-27 06:33:18.320718---->duplicate key value violates unique constraint "water_forecast_pkey"
+DETAIL:  Key (bill_id)=(73) already exists.
+CONTEXT:  SQL statement "insert into water_forecast (projected_consumption,future_date,total_proj_consumption,"CustomerId") 
+		values(cast(utility_consumption as float),cast(to_char(cast(today_date as timestamp),'yyyy-MM-dd') as date)
+			   ,cast(total_proj_consumption as float),customerId)"
+PL/pgSQL function insertdatafromfile(text,double precision,boolean,character varying,integer,integer,bigint) line 14 at SQL statement
+FOr User:  2
+2022-09-27 06:33:18.348719---->2022-09-02 00:00:00   ----    140.20567105326205
+2022-09-27 06:33:18.401720---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:18.424722---->2022-09-03 00:00:00   ----    145.4089955401647
+2022-09-27 06:33:18.448722---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:18.508724---->2022-09-04 00:00:00   ----    317.2091179072252
+2022-09-27 06:33:18.534727---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:18.562725---->2022-09-05 00:00:00   ----    350.89315760782665
+2022-09-27 06:33:18.617722---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:18.641727---->2022-09-06 00:00:00   ----    241.33215845267594
+2022-09-27 06:33:18.666731---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:18.735729---->2022-09-07 00:00:00   ----    188.41028023276618
+2022-09-27 06:33:18.757681---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:18.781730---->2022-09-08 00:00:00   ----    138.33038313884128
+2022-09-27 06:33:18.812732---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:18.839732---->2022-09-09 00:00:00   ----    135.18027660509165
+2022-09-27 06:33:18.858725---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:18.940732---->2022-09-10 00:00:00   ----    140.38360109213733
+2022-09-27 06:33:18.966738---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:19.012704---->2022-09-11 00:00:00   ----    312.183723459167
+2022-09-27 06:33:19.067706---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:19.095707---->2022-09-12 00:00:00   ----    345.8677631596902
+2022-09-27 06:33:19.119707---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:19.198661---->2022-09-13 00:00:00   ----    236.3067640043029
+2022-09-27 06:33:19.257712---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:19.284674---->2022-09-14 00:00:00   ----    183.3848857846526
+2022-09-27 06:33:19.310712---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:19.363713---->2022-09-15 00:00:00   ----    133.30498869068057
+2022-09-27 06:33:19.387715---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:19.414730---->2022-09-16 00:00:00   ----    130.154882156957
+2022-09-27 06:33:19.448675---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:19.507734---->2022-09-17 00:00:00   ----    135.35820664403474
+2022-09-27 06:33:19.533719---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:19.609721---->2022-09-18 00:00:00   ----    307.1583290105678
+2022-09-27 06:33:19.633720---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:19.712746---->2022-09-19 00:00:00   ----    340.8423687116261
+2022-09-27 06:33:19.736724---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:19.763724---->2022-09-20 00:00:00   ----    231.2813695561874
+2022-09-27 06:33:19.786723---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:19.815724---->2022-09-21 00:00:00   ----    178.3594913365248
+2022-09-27 06:33:19.843727---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:19.931709---->2022-09-22 00:00:00   ----    128.2795942425198
+2022-09-27 06:33:19.957727---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:19.983729---->2022-09-23 00:00:00   ----    125.12948770880445
+2022-09-27 06:33:20.009701---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:20.035696---->2022-09-24 00:00:00   ----    130.3328121960826
+2022-09-27 06:33:20.057696---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:20.109697---->2022-09-25 00:00:00   ----    302.13293456262727
+2022-09-27 06:33:20.135702---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:20.162718---->2022-09-26 00:00:00   ----    335.8169742636264
+2022-09-27 06:33:20.186693---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:20.240665---->2022-09-27 00:00:00   ----    226.255975108072
+2022-09-27 06:33:20.281700---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:20.284703---->2022-09-28 00:00:00   ----    173.334096888397
+2022-09-27 06:33:20.330702---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:20.364704---->2022-09-29 00:00:00   ----    123.25419979435907
+2022-09-27 06:33:20.391703---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:20.418704---->2022-09-30 00:00:00   ----    120.10409326075573
+2022-09-27 06:33:20.463704---->current transaction is aborted, commands ignored until end of transaction block
+FOr User:  2
+2022-09-27 06:33:20.490704---->:::---End Inserting Forecast Data For User:-->2
+2022-09-27 06:33:20.540687---->Done ForecastData Insert for the Month:-->9
+2022-09-27 06:52:29.150725---->File in running mode....please don't stop it...6 Months Data Insert!!-->>2022-09-27 06:52:29.149735

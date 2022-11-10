@@ -1,3 +1,4 @@
+from Logging import LoggeR
 from Data import config_helper
 _config = config_helper.read_config()
 def getconfigurations():
@@ -12,6 +13,9 @@ def getconfigurations():
         _dbsaya           = _config.get('configurationSettings','dbsaya')
         _dbml = _config.get('configurationSettings', 'dbml')
         _dbport               =  _config.get('configurationSettings','dbport')
+        _localpath = _config.get('configurationSettings', 'localpath')
+        _deployedpath = _config.get('configurationSettings', 'deployedpath')
+
         # mail settings
         _smptserver         = _config.get('configurationSettings','smtppserver')
         _smptport           = _config.get('configurationSettings','smtpport')
@@ -27,6 +31,8 @@ def getconfigurations():
         print(_dbusernameaws)
         print(_dbpasswordaws)
         print(_dbsaya)
+        print(_localpath)
+        print(_deployedpath)
         print(_dbml)
         print(_dbport)
         print(_smptserver)
@@ -39,7 +45,8 @@ def getconfigurations():
                 '_dbpassword':_dbpassword,'_dbusernameaws':_dbusernameaws,
                 '_dbpasswordaws':_dbpasswordaws,'_dbsaya':_dbsaya,'_dbport':_dbport,'_dbml':_dbml,
                 '_smptserver':_smptserver,'_smptport':_smptport,'_isSSL':_isSSL,
-                '_from':_from,'_mailPassword':_mailPassword,'useDefCreds':_useDefaultCreds}
+                '_from':_from,'_mailPassword':_mailPassword,'useDefCreds':_useDefaultCreds,'localpath':_localpath,'deployedpath':_deployedpath}
     except Exception as Argument:
+        LoggeR.writeExpceptionToTexFile(Argument.__str__())
         print(Argument.__str__())
         pass

@@ -1,6 +1,6 @@
 import warnings
-#from fbprophet import Prophet  # from fbprophet
-from prophet import Prophet
+from fbprophet import Prophet  # from fbprophet
+#import prophet
 # import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -56,17 +56,15 @@ def main(finaldate,filename,id,df):
                 total = forecast['yhat'].tail(30).sum(axis=0, skipna=True)
                 fixt = forecast.tail(30).to_numpy()
                 print(fixt)
-                print(total)
-                LoggeR.writeExpceptionToTexFile(":::---Whole Month Sum "+ total.__str__() + " For User:-->" + id.__str__())
                 # Current month data
                 # connection For Development
                 #connectionSetting = getConfigurationSettings.getconfigurations()
                 # connectionObj = connectionDB.connectDatabase(connectionSetting['_dbusername'], connectionSetting['_dbpassword'],
-                                                    #    connectionSetting['_hostlocal'], connectionSetting['_dbport'],connectionSetting['_dbsaya'])
-                                                       #'sayaml')
-                connectionObj = connectionDB.connectDatabase("SayaLive", "Mli$3120$8%(0",
+                                                    #    connectionSetting['_hostlive'], connectionSetting['_dbport'],connectionSetting['_dbsaya'])
+                connObj = connectionDB.connectDatabase("SayaLive", "Mli$3120$8%(0",
                                                "saya-live.cq6nozddb1mr.us-west-2.rds.amazonaws.com", 5432,
                                                "SAYA")
+                                                       #'sayaml')
                 #connectionObj = connectionDB.connectDatabase('postgres',
                 #                                             'test#123',
                 #                                                                                  'localhost', '5432',
@@ -90,10 +88,8 @@ def main(finaldate,filename,id,df):
                         #cur.callproc('InsertDataFromFile', (fixtures[idx].__str__(),
                         #float(gallonsData), bool(1), finaldate,0,0,id))
                         #df = pd.read_sql(query, Connection)
-                        
-                        #cur.execute(query)                 
-                        #connectionObj.commit();
-                        
+                        cur.execute(query)
+                        connectionObj.commit();
                         #cur.nextset()
                     except Exception as Argument:
                         LoggeR.writeExpceptionToTexFile(Argument.__str__() + "FOr User:  " + id.__str__())

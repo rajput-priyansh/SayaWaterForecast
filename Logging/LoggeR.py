@@ -1,50 +1,17 @@
 import logging
+from datetime import datetime
 
-# Gets or creates a logger
-logger = logging.getLogger(__name__)
+from Data import getConfigurationSettings
 
-# set log level
-logger.setLevel(logging.WARNING)
+def writeExpceptionToTexFile(Argument):
+    try:
+        #settings = getConfigurationSettings.getconfigurations()
+        # f = open(settings['deployedpath'] +"/Logs/"+"LogException.txt", "a")
+        f = open("C:/inetpub/wwwroot/SayaMLForecast/SayaWaterForecast" +"/Logs/"+"LogException.txt", "a")
 
-# define file handler and set formatter
-file_handler = logging.FileHandler('C:/inetpub/wwwroot/SayaMLForecast/SayaWaterForecast/Logs.log')
-formatter = logging.Formatter('%(asctime)s : %(levelname)s : %(name)s : %(message)s')
-file_handler.setFormatter(formatter)
-
-# add file handler to logger
-logger.addHandler(file_handler)
-
-
-
-# import logging
-# import sys
-# from logging.handlers import QueueHandler
-# from Data import  getConfigurationSettings
-# logger = logging.getLogger(__name__)
-# logger.setLevel(logging.DEBUG)
-#
-# formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-#
-# consoleHandler = logging.StreamHandler(sys.stdout)
-# consoleHandler.setLevel(logging.DEBUG)
-# consoleHandler.setFormatter(formatter)
-#
-# fileHandler = logging.handlers.RotatingFileHandler(filename="D:/Python/SayaWaterForecast/Logs/error.log",maxBytes=1024000, backupCount=10, mode="a")
-# # fileHandler = logging.FileHandler(filename="D:/Python/SayaWaterForecast/Logs/error.log")
-# fileHandler.setLevel(logging.INFO)
-# fileHandler.setLevel(logging.debug)
-# fileHandler.setLevel(logging.error)
-# fileHandler.setFormatter(formatter)
-# mailsettings= getConfigurationSettings.getconfigurations()
-# # smtpHandler = logging.handlers.SMTPHandler(
-# #               mailhost = ('smtp.gmail.com',587),
-# #               fromaddr = mailsettings['fromMail'],
-# #               toaddrs =   'chirag.parmar@sayalife.in',  #mailsettings['to'],
-# #               subject = "Logging test mail!"
-# #             )
-# # smtpHandler.setLevel(logging.CRITICAL)
-# # smtpHandler.setFormatter(formatter)
-#
-# logger.addHandler(consoleHandler)
-# logger.addHandler(fileHandler)
-# # logger.addHandler(smtpHandler)
+        # writing in the file
+        f.write(datetime.now().__str__() +"---->"+str(Argument)+"\n")
+        # closing the file
+        f.close()
+    except Exception as Argument:
+        logging.error(Argument.__str__())

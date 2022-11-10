@@ -1,8 +1,0 @@
-2022-09-12 17:34:11,054 : ERROR : Logging.LoggeR : Invalid file path or buffer object type: <class 'pandas.core.frame.DataFrame'>
-2022-09-12 17:34:40,780 : ERROR : Logging.LoggeR : local variable 'Argument' referenced before assignment
-2022-09-12 17:46:16,623 : ERROR : Logging.LoggeR : local variable 'Argument' referenced before assignment
-2022-09-12 17:48:27,777 : ERROR : Logging.LoggeR : local variable 'id' referenced before assignment
-2022-09-13 11:10:31,843 : ERROR : Logging.LoggeR : local variable 'id' referenced before assignment
-2022-09-13 11:12:00,124 : ERROR : Logging.LoggeR : local variable 'id' referenced before assignment
-2022-09-13 11:14:54,294 : ERROR : Logging.LoggeR : local variable 'id' referenced before assignment
-2022-09-13 11:16:06,270 : ERROR : Logging.LoggeR : local variable 'id' referenced before assignment
